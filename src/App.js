@@ -36,7 +36,7 @@ class App extends Component {
         <Routes>
           <Route exact path="/" element={ <TabelaLivros livros={this.state.livros} />} />
           <Route exact path="/cadastrar" element={ <CadastrarLivros />} />
-          <Route component={NotFound} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     );
