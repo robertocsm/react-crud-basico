@@ -38,22 +38,22 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
+      <Router>        
         <Menu />
         <Routes>
           <Route exact path="/" element={ <TabelaLivros livros={this.state.livros} />} />
-          <Route exact path="/cadastrar" element={ <CadastrarLivros 
-                    inserirLivro = {this.inserirLivro}
-                    livro = {{ id: 0, isbn:"", titulo:"", autor:""}}
-                    />
-                } 
+          <Route exact path="/cadastrar" element={ 
+            <CadastrarLivros 
+            inserirLivro = {this.inserirLivro}
+            livro = {{ id: 0, isbn:"", titulo:"", autor:""}}
             />
-            <Route
-            exact
+          } 
+          />
+          <Route          
             path="/editar/:isbnLivro"
             element={(props) => {
               const livro = this.state.livros.find(
-                (livro) => livro.isbn === props.match.params.isbnLivro
+                (livro) => livro.isbn === this.props.match.params.isbnLivro
               );
               if (livro) {
                 return (
@@ -65,8 +65,7 @@ class App extends Component {
               } else {
                 return <Navigate to="/" />;
               }
-            }}
-          />
+            }} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
