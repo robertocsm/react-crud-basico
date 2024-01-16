@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate, useParams } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Menu from "./components/Menu";
 import TabelaLivros from "./components/TabelaLivros";
 import CadastrarLivros from "./components/CadastrarLivros";
@@ -7,10 +7,6 @@ import NotFound from "./components/NotFound";
 
 
 class App extends Component {
-
-  constructor(props){
-    super(props);
-  }
 
   state = {
     livros: [

@@ -18,6 +18,7 @@ class CadastrarLivros extends Component {
     this.props.inserirLivro(this.state.livro);
     this.setState({ redirecionar: true });
   };
+  
   render() {
     if (this.state.redirecionar === true) {
       return <Navigate to="/" />;
